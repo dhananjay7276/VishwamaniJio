@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href = "/static/vender/bs/css/bootstrap.min.css" rel= "stylesheet"/>
+	<script src= "/static/vender/jquery-3.3.1.min.js"></script>
+	<script src= "/static/vender/popper.min.js"></script>
+	<script src= "/static/vender/bs/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/static/login/style.css">
+	<!-- <style>
+
+		
+		h1 {
+			color:black;
+			
+		}
+		h6{
+			color: black;
+		}
+	</style> -->
+  </head>
+  <body>
+	<body>
+		<div class="login-box">
+			<div class="text-center">
+				<img src="/static/login/logo-bg3.PNG" class="rounded img" alt="...">
+			  </div>
+			<!-- <img src="/static/login/logo.jpeg" alt="..." class="img rounded mx-auto d-block"> -->
+			<div class="text-center">
+				<h1 class="bottom_border">Login</h1>
+			</div>
+			
+		  
+		  <form enctype="multipart/form-data" method= "post">
+			{% csrf_token %}
+			<p>
+				<p>
+					<p><input id="id_username" name="username" placeholder="Username" type="text" class="form-control"></p>
+				</p>
+				<p>
+					<p><input id="id_password" name="password" 
+					placeholder="Password" type="password" class="form-control"></p>
+				</p>
+				<h6>forgot your password ? <span><a href="/accounts/password/reset/">Click here</a></span></h6>
+			</p>
+			{% if form.errors %}
+				<p class="text-danger">
+					Your username and password didn't match. 
+					Please try again.
+				</p>
+			{% endif %}
+			
+			<input class= "btn btn-primary" type="submit" value = "Login"/>
+			
+			</form>
+			<!-- <h6>Dont have a accounts ? <span><a href="/accounts/password/reset/">Click here</a></span></h6> -->
+			<a href="/accounts/register/" class="btn btn-primary" role="button">Register</a>
+			
+		</div>
+		  </body>
+		  
+</html>
